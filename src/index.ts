@@ -45,7 +45,7 @@ app.patch("/contacts/:id", async (c) => {
         email:email,
       },
     });
-    return c.json({ message: "updated successfully" }, 200);
+    return c.json({ message: "Updated successfully" }, 200);
   } catch (e) {
     return c.json({ error: "Bad request" }, 500);
   }
