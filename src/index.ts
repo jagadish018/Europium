@@ -45,7 +45,7 @@ app.patch("/contacts/:id", async (c) => {
         email:email,
       },
     });
-    return c.json(contact, 200);
+    return c.json({ message: "updated successfully" }, 200);
   } catch (e) {
     return c.json({ error: "Bad request" }, 500);
   }
@@ -59,7 +59,7 @@ app.delete("/contacts/:id", async (c) => {
         id: id,
       },
     });
-    return c.json(contact, 200);
+    return c.json({message:"Deleted successfully"}, 200);
   } catch (e) {
     return c.json({ error: "Bad request" }, 500);
   }
