@@ -10,7 +10,7 @@ app.get("/contacts", async (c) => {
     const contacts = await prisma.contact.findMany();
     return c.json(contacts, 200);
   } catch (e) {
-    return c.json({ error: "doesn't exists" }, 500);
+    return c.json({ error: "Bad request" }, 500);
   }
 });
 
@@ -27,7 +27,7 @@ app.post("/contacts", async (c) => {
     return c.json(contact, 201);
   } catch (e) {
     
-    return c.json({ error: "doesn't exists" }, 500);
+    return c.json({ error: "Bad request" }, 500);
   }
 });
 
@@ -47,7 +47,7 @@ app.patch("/contacts/:id", async (c) => {
     });
     return c.json(contact, 200);
   } catch (e) {
-    return c.json({ error: "doesn't exists" }, 500);
+    return c.json({ error: "Bad request" }, 500);
   }
 });
 
@@ -61,7 +61,7 @@ app.delete("/contacts/:id", async (c) => {
     });
     return c.json(contact, 200);
   } catch (e) {
-    return c.json({ error: "doesn't exists" }, 500);
+    return c.json({ error: "Bad request" }, 500);
   }
 });
 
